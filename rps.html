@@ -1,0 +1,42 @@
+<script>
+    console.log("Hello World");
+    function getComputerChoice(){
+        let cpu_answers = ["rock", "paper", "scissors"];
+        var index = Math.floor(Math.random() * cpu_answers.length);
+        return cpu_answers[index];
+    }
+    
+    function getPlayerChoice(){
+        var p_ans = prompt("rock, paper, or scissors?");
+        return p_ans;
+    }
+    
+
+    function playRound() {
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+
+        console.log(`Player's choice: ${playerChoice}`);
+        console.log(`Computer's choice: ${computerChoice}`);
+
+        if(playerChoice == computerChoice){
+            return "Deary me it's a draw";
+        }
+
+        if(playerChoice == "paper" || playerChoice == "Paper" && computerChoice == "rock"|| 
+            playerChoice == "rock" || playerChoice == "Rock" && computerChoice == "scissors" ||
+            playerChoice == "scissors" || playerChoice=="Scissors" && computerChoice == "paper" ){
+            return "You win!"
+        }
+        else{
+            return "you lose :(";
+        }
+        
+  // your code here!
+}
+
+console.log(getPlayerChoice);
+console.log(playRound(getPlayerChoice,getComputerChoice));
+
+
+</script>
