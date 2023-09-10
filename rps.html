@@ -10,7 +10,8 @@
         var p_ans = prompt("rock, paper, or scissors?");
         return p_ans;
     }
-    
+    let cpuScore=0;
+    let yourScore = 0;
 
     function playRound() {
         let playerChoice = getPlayerChoice();
@@ -23,20 +24,37 @@
             return "Deary me it's a draw";
         }
 
-        if(playerChoice == "paper" || playerChoice == "Paper" && computerChoice == "rock"|| 
-            playerChoice == "rock" || playerChoice == "Rock" && computerChoice == "scissors" ||
-            playerChoice == "scissors" || playerChoice=="Scissors" && computerChoice == "paper" ){
+        if(playerChoice == "paper" && computerChoice == "rock"|| 
+            playerChoice == "rock"  && computerChoice == "scissors" ||
+            playerChoice == "scissors" && computerChoice == "paper" ){
+                
+                yourScore++; 
             return "You win!"
         }
         else{
+            cpuScore++;
             return "you lose :(";
+            
         }
         
   // your code here!
 }
 
-console.log(getPlayerChoice);
-console.log(playRound(getPlayerChoice,getComputerChoice));
+function game(){
+for(let i=0;i<=5;i++){
+    
+    playRound();
+    
+    console.log("Computer has "+cpuScore +" points");
+    console.log("you have "+yourScore+" points");
+
+}
+}
 
 
+game();
 </script>
+
+
+
+
